@@ -1,0 +1,26 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.board {
+    display: grid;
+    justify-content: center;
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+
