@@ -5,22 +5,20 @@ const board = document.querySelector('.board')
 const sizeButton = document.querySelector(".size")
 const refreshButton = document.querySelector(".refresh")
 
-let input
 
-//Create a grid
+//Create a base 16 x 16 grid
 
-function makeBoard(size) {
-board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+function makeBoard(input) {
+board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
 }
 
-makeBoard(input)
+makeBoard(16)
 
 // User input for board size creation
 
-
-
 sizeButton.addEventListener('click', chooseSize)
+
 function chooseSize() {
    let input = prompt("Please enter a number to select your grid size");
     if (input == "") {
@@ -29,7 +27,10 @@ function chooseSize() {
     else if (input < 0 || input > 100) {
         message.textContent = "Please select a number between 1-100"
     }
-    else return input
+    else {
+        board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+        board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+    }
 }
 
 //Refresh Button Function

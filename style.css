@@ -32,8 +32,15 @@ h1 {
 
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-self: center;
     margin-bottom: 10px;
 }
 
+.size {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
 
