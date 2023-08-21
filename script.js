@@ -9,8 +9,17 @@ const refreshButton = document.querySelector(".refresh")
 //Create a base 16 x 16 grid
 
 function makeBoard(input) {
-board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
-board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+    board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+
+//Create divs
+
+    let grideSize = input * input;
+
+    for (i = 0; i < grideSize; i++) {
+        let div = document.createElement('div');
+        board.appendChild(div);
+    }
 }
 
 makeBoard(16)
