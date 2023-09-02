@@ -15,14 +15,20 @@ function makeBoard(input) {
 //Create divs
 
     let grideSize = input * input;
+    
+// Hover event that shades pixels
 
     for (i = 0; i < grideSize; i++) {
         let div = document.createElement('div');
-        board.appendChild(div);
+        board.insertAdjacentElement('beforeend', div);
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = 'black';
+        })
     }
 }
 
 makeBoard(16)
+
 
 // User input for board size creation
 
@@ -39,6 +45,18 @@ function chooseSize() {
     else {
         board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
         board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+
+// Hover event that shades pixels
+
+    let grideSize = input * input;
+
+    for (i = 0; i < grideSize; i++) {
+        let div = document.createElement('div');
+        board.insertAdjacentElement('beforeend', div);
+        div.addEventListener('mouseover', () => {
+            div.style.backgroundColor = 'black';
+        })
+        } 
     }
 }
 
