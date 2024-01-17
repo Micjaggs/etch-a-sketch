@@ -11,6 +11,7 @@ const refreshButton = document.querySelector(".refresh")
 function makeBoard(input) {
     board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+    
 
 //Create divs
 
@@ -32,7 +33,10 @@ makeBoard(16)
 
 // User input for board size creation
 
-sizeButton.addEventListener('click', chooseSize)
+
+
+sizeButton.addEventListener('click', resetColor)
+sizeButton.addEventListener('click', chooseSize) 
 
 function chooseSize() {
    let input = prompt("Please enter a number to select your grid size");
@@ -42,11 +46,15 @@ function chooseSize() {
     else if (input < 0 || input > 100) {
         message.textContent = "Please select a number between 1-100"
     }
-    else {
+    else {  
+        // PROBLEM MAY BE HERE
         board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
-        board.style.gridTemplateRows = `repeat(${input}, 1fr)`;
+        board.style.gridTemplateRows = `repeat(${input}, 1fr)`; 
+        
+        
 
-// Hover event that shades pixels
+    
+// Hover event that shades pixels 
 
     let grideSize = input * input;
 
@@ -67,3 +75,12 @@ refreshButton.addEventListener('click', refresh)
 function refresh() {
     location.reload();
 }
+
+
+function resetColor() {
+    let divs = document.querySelectorAll("div")
+    divs.forEach((div => div.style.backgroundColor = "white"))
+}
+// Need to find out why sketch doesn't reset when selecting new size
+// Need to create and on off toggle for the hover function
+// Need to create a multicolour setting
