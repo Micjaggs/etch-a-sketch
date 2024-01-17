@@ -6,7 +6,7 @@ const sizeButton = document.querySelector(".size")
 const refreshButton = document.querySelector(".refresh")
 
 
-//Create a base 16 x 16 grid
+//Function to create a base 16 x 16 grid
 
 function makeBoard(input) {
     board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
@@ -51,9 +51,6 @@ function chooseSize() {
     else {  
         board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
         board.style.gridTemplateRows = `repeat(${input}, 1fr)`; 
-        
-        
-
     
 // Hover event that shades pixels 
 
