@@ -34,8 +34,10 @@ makeBoard(16)
 // User input for board size creation
 
 
-
+// This function resets the div colors
 sizeButton.addEventListener('click', resetColor)
+
+// This function enables the user to select board size
 sizeButton.addEventListener('click', chooseSize) 
 
 function chooseSize() {
@@ -47,7 +49,6 @@ function chooseSize() {
         message.textContent = "Please select a number between 1-100"
     }
     else {  
-        // PROBLEM MAY BE HERE
         board.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
         board.style.gridTemplateRows = `repeat(${input}, 1fr)`; 
         
@@ -76,11 +77,12 @@ function refresh() {
     location.reload();
 }
 
+//Function that clears divs 
 
 function resetColor() {
     let divs = document.querySelectorAll("div")
     divs.forEach((div => div.style.backgroundColor = "white"))
 }
-// Need to find out why sketch doesn't reset when selecting new size
-// Need to create and on off toggle for the hover function
-// Need to create a multicolour setting
+
+// Create and on off toggle for the hover function
+// Create a multicolour setting
