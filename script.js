@@ -81,5 +81,6 @@ function resetColor() {
     divs.forEach((div => div.style.backgroundColor = "white"))
 }
 
+// Jobs for later below
 // Create and on off toggle for the hover function
 // Create a multicolour setting
