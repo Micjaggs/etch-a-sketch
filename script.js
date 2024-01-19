@@ -81,6 +81,10 @@ function resetColor() {
     divs.forEach((div => div.style.backgroundColor = "white"))
 }
 
+//Function that allows you to click on and off 
+//must activate within board, which is a click and a mouseover event
+//click must engage and disengage this function
+
 // Jobs for later below
 // Create and on off toggle for the hover function
 // Create a multicolour setting
